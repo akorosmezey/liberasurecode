@@ -15,6 +15,7 @@ fn main() {
         "install_deps.sh",
         "liberasurecode.patch",
         "for_darwin_to_detect_compiler_flag.patch",
+        "for_linux_to_detect_compiler_flag.patch",
     ] {
         fs::copy(file, build_dir.join(file)).unwrap();
     }
@@ -29,10 +30,7 @@ fn main() {
         }
         Ok(output) => {
             if !output.status.success() {
-                panic!(
-                    "./install_deps.sh failed: exit-code={:?}",
-                    output.status.code()
-                );
+                panic!("./install_deps.sh failed: exit-code={:?}", output.status.code());
             }
         }
     }

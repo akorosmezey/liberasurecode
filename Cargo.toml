@@ -1,13 +1,13 @@
 [package]
 edition = "2018"
 name = "liberasurecode"
-version = "1.0.3"
+version = "1.0.6"
 authors = ["The FrugalOS Developers"]
 links = "erasurecode"
 build = "build.rs"
 description = "A Rust wrapper for `openstack/liberasurecode`"
-homepage = "https://github.com/frugalos/liberasurecode"
-repository = "https://github.com/frugalos/liberasurecode"
+homepage = "https://github.com/akorosmezey/liberasurecode"
+repository = "https://github.com/akorosmezey/liberasurecode"
 readme = "README.md"
 keywords = ["erasure-coding"]
 categories = ["api-bindings", "encoding"]

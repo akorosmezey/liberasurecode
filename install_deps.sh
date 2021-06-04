@@ -48,11 +48,16 @@ cd ../
 #
 git clone https://github.com/openstack/liberasurecode.git
 cd liberasurecode/
-git checkout 1.5.0
+git checkout 1.6.2
 if [ "$(uname)" == "Darwin" ]; then
     # if the compiler has the feature to check `address-of-packed-member`, we suppress it.
     # it is only annoying for liberasurecode v1.5.0.
     patch -p1 < ../for_darwin_to_detect_compiler_flag.patch
+fi
+if [ "$(uname)" == "Linux" ]; then
+    # if the compiler has the feature to check `address-of-packed-member`, we suppress it.
+    # it is only annoying for liberasurecode v1.5.0.
+    patch -p1 < ../for_linux_to_detect_compiler_flag.patch
 fi
 ./autogen.sh
 if [[ $DEBUG = true ]]; then
